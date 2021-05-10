@@ -13,7 +13,7 @@ import baseAndUtilities.CommonMethods;
 @RunWith(Cucumber.class)
 public class StepDefTest extends Base, CommonMethods  {
 
-	CommonMethods cm = new CommonMethods();
+	CommonMethods cm = new CommonMethods(); 
 	
 	@Given("^User is on Home Page$")
     public void user_is_on_home_page() throws Throwable {
