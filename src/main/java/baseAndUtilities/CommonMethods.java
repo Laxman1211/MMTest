@@ -21,6 +21,7 @@ public class CommonMethods extends Base {
 	}
 
 	public void valueGreaterThanZero() {
+		try {
 		List<WebElement> values = driver.findElements(By.xpath("//*[id='lbl_val']"));
 		for (int i = 0; i <= values.size(); i++) {
 			if (values.get(i).getText() > 0) {
@@ -29,10 +30,14 @@ public class CommonMethods extends Base {
 				System.out.println(" Values are greater than Zero ");
 			}
 		}
+		}
+		catch (Exception e) {
+	          e.printStackTrace();
+	      }
 	}
 
 	public void totalBalanceCorrect() {
-
+		try {
         List<WebElement> txt_values = driver.findElements(By.xpath("txt_val"));
 
         int Exp_totalVal = 1000000;
@@ -44,9 +49,14 @@ public class CommonMethods extends Base {
             System.out.println("Total is:"+sum);
         }
         Assert.assertEquals(Exp_totalVal, totalVal);
+		}
+		catch (Exception e) {
+	          e.printStackTrace();
+	      }
 	}
 
 	public void valuesFormatCurrency() {
+		try {
 		WebElement element = driver.findElement(By.id("txt_val_1"));
 		String text = element.getAttribute("value");
 		System.out.println(text);
@@ -56,5 +66,27 @@ public class CommonMethods extends Base {
 		} else {
 			System.out.println("Not Formatted as currencies");
 		}
+		}
+		catch (Exception e) {
+	          e.printStackTrace();
+	      }
+	}
+	
+	// Total balance is correct
+	public void totalBalCorrect() {
+		try {
+		List<WebElement> values = driver.findElements(By.xpath("contains(text(),'txt_val')"));
+		int expetedSum = 1000000;
+		int sum = 0;
+		for (int i = 0; i < values.size(); i++) 
+		{
+			sum = sum + i;
+		}
+		Assert.assertEquals(expetedSum, sum);
+			
+	}
+	catch (Exception e) {
+	          e.printStackTrace();
+	      }
 	}
 }

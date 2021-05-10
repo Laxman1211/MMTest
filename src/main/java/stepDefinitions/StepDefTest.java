@@ -28,27 +28,26 @@ public class StepDefTest extends Base, CommonMethods  {
 
     @Then("^Right count of values appear on screen$")
     public void right_count_of_values_appear_on_screen() throws Throwable {
-    	countOfValues(); 
+    	cm.countOfValues(); 
     }
 
     @Then("^values are greater than Zero$")
     public void values_are_greater_than_zero() throws Throwable {
-    	valueGreaterThanZero();   	
+    	cm.valueGreaterThanZero();   	
     }
 
     @Then("^Total balance is correct$")
     public void total_balance_is_correct() throws Throwable {
-        
+    	cm.totalBalCorrect();
     }
 
     @Then("^Values are formatted as currencies$")
     public void values_are_formatted_as_currencies() throws Throwable {
-    	valuesFormatCurrency();
+    	cm.valuesFormatCurrency();
     }
 
     @Then("^Total balance equals to sum of values$")
     public void total_balance_equals_to_sum_of_values() throws Throwable {
-        
+    	cm.totalBalCorrect();
     }
-
 }
